@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* line-height: 1.5; */
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+ 
+}
+
+h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.container{
+  width: 98vw;
+}
+.main{
+  display: flex;
+}
+.container .heading{
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+.appointees-list{
+  /* height: 55vh; */
+  width: 60%;
+  /* border: 1px solid gray; */
+  border-radius: 8px;
+  margin: 1rem auto;
+  background-color: #adb1ff;
+  
+}
+
+.container .control-btns{
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.assignments{
+  /* min-height: 50vh; */
+  width: 35%;
+  /* border: 1px solid gray; */
+  border-radius: 8px;
+  background-color: #adb1ff;
+  padding: 1rem 0;
+}
+
+.appointees{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+}
+
+.filter{
+  display: flex;
+  padding: 4px 8px;
+  justify-content: right;
+}
+
+.filter select{
+  background: #f9f9f9;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+  border: transparent;
+}
+.appointee-card{
+  margin: 4px 2px;
+  padding: 4px 2px;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+.appointee-card p{
+  padding: 0;
+  margin: 0;
+}
+
+.appointee-name{
+  font-weight: bold;
+}
+
+
+.priv-el{
+  background-color: #213547;
+  color: white;
+  padding: 1px 2px;
+  border-radius: 2px;
+  margin: 0 2px;
+}
+
+.priv-ms{
+  background-color: #395c7a;
+  color: white;
+  padding: 1px 2px;
+  border-radius: 2px;
+  margin: 0 2px;
+}
+
+.resp{
+  background-color: orange;
+   color: white;
+  padding: 1px 2px;
+  border-radius: 2px;
+  margin: 0 2px;
+}
+
+.assignment{
+  /* margin-top: 16px; */
+  
+  font-weight: bold;
+  margin: 0 1rem;
+  margin-top: 1rem;
+}
+
+.assignee{
+  background-color: #f9f9f9;
+  padding:0 8px;
+  margin-left: 3rem;
+  /* border-radius: 8px; */
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 8px;
+  font-size: 1.2rem;
+  color: #213547;
+}
