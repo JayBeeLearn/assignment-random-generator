@@ -5,7 +5,7 @@ function Assignment({ target, part, selectedAppointee, partID }) {
   return (
     <>
       <p key={partID} className="assignment">
-        {part}{" "}
+        {part}
       </p>
 
     
