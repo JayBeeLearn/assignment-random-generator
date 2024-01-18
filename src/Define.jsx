@@ -27,7 +27,8 @@ function Define() {
   const [name, setName] = useState("");
   const [privelege, setPrivelege] = useState("");
 
-  const addPerson = () => {
+  const addPerson = (e) => {
+    e.preventDefault()
     let ID = personels.length + 1;
     if (name && privelege) {
       const newperson = {
@@ -83,34 +84,35 @@ function Define() {
 
         <div className="">
           <div className="block md:flex">
-            {/* <form action=""> */}
-            <div className="my-4">
-              <input
-                className="px-2 py-4 w-[45] outline rounded m-2 outline-slate-300 placeholder:text-lg md:placeholder:text-xl"
-                type="text"
-                placeholder="Name"
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                value={name}
-              />
+            <form action="">
+              <div className="my-4">
+                <input
+                  className="px-2 py-4 w-[45] outline rounded m-2 outline-slate-300 placeholder:text-lg md:placeholder:text-xl"
+                  type="text"
+                  placeholder="Name"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  value={name}
+                />
 
-              <input
-                className="px-2 py-4 w-[45] outline rounded m-2 outline-slate-300 placeholder:text-lg md:placeholder:text-xl"
-                type="text"
-                placeholder="Privelege "
-                onChange={(e) => {
-                  setPrivelege(e.target.value);
-                }}
-                value={privelege}
-              />
-              <input
-                className="bg-green-300 px-8 py-4 rounded text-xl text-blue-600"
-                type="submit"
-                value="Add"
-                onClick={addPerson}
-              />
-            </div>
+                <input
+                  className="px-2 py-4 w-[45] outline rounded m-2 outline-slate-300 placeholder:text-lg md:placeholder:text-xl"
+                  type="text"
+                  placeholder="Privelege "
+                  onChange={(e) => {
+                    setPrivelege(e.target.value);
+                  }}
+                  value={privelege}
+                />
+                <input
+                  className="bg-green-300 px-8 py-4 rounded text-xl text-blue-600"
+                  type="submit"
+                  value="Add"
+                  onClick={addPerson}
+                />
+              </div>
+            </form>
             {/* WORK ON ADDING SPECIAL PRIVELLEGE FUNCTIONALITY  */}
             {/* <select name="" id="" onChange={(e) => {
               set
@@ -123,18 +125,16 @@ function Define() {
             </select> */}
 
             <div>
-              <button className="py-4 mr-4 rounded" onClick={selectRan}>
+              <button className="btn" onClick={selectRan}>
                 Generate
               </button>
 
               {personels.length > 0 && (
-                <button onClick={saveList} className="py-4">
+                <button onClick={saveList} className="btn">
                   Save List
                 </button>
               )}
             </div>
-
-            {/* </form> */}
           </div>
 
           <div className="flex">

@@ -81,7 +81,7 @@ function HomePage() {
         </div>
         <div className="w-full flex flex-col ">
           <div className="flex justify-around my-2">
-            <button
+            <button className="btn"
               onClick={() => {
                 randomAppointee();
                 // setTarget(target + 1);
@@ -90,7 +90,7 @@ function HomePage() {
             >
               Next
             </button>{" "}
-            <button
+            <button className="btn"
               onClick={() => {
                 setTarget(target + 1);
                 setSelectedAppointee("");
@@ -98,7 +98,7 @@ function HomePage() {
             >
               Skip
             </button>
-            <button
+            <button className="btn"
               onClick={() => {
                 setAppointeed(congPeople);
                 setSelectedAppointee("");
