@@ -23,7 +23,9 @@ function HomePage() {
     let selected = appointeed[randomNumber];
 
     let updatedList = appointeed.filter((sel, i) => {
-      if (i !== randomNumber) {
+      // console.log(i);
+      // console.log(sel.id);
+      if (i != randomNumber ) {
         return sel;
       }
     });
@@ -64,47 +66,58 @@ function HomePage() {
   // console.log(randomAppointee());
   // const selected = randomAppointee();
 
+  const removeAppointee = (id) => {
+    let newList = appointeed.filter((person) => person.id != id);
+    setAppointeed(newList);
+  };
+
   return (
     <>
-      <div className="container">
+      <div className="w-full">
         <div className="heading">
-          <h1 className="text-4xl">Random Assignment Placement </h1>
+          <h1 className="text-2xl text-center sm:text-4xl">
+            Random Assignment Placement{" "}
+          </h1>
         </div>
-        <div className="control-btns">
-          <button
-            onClick={() => {
-              randomAppointee();
-              // setTarget(target + 1);
-              setNextTarget(target);
-            }}
-          >
-            Next
-          </button>{" "}
-          <button
-            onClick={() => {
-              setTarget(target + 1);
-              setSelectedAppointee("");
-            }}
-          >
-            Skip
-          </button>
-          <button
-            onClick={() => {
-              setAppointeed(congPeople);
-              setSelectedAppointee("");
-              setTarget(0);
-            }}
-          >
-            Reset
-          </button>
-          <Link to={"define"}>Define</Link>
-          <Link to={"add-personel"}>Add New Personel</Link>
+        <div className="w-full flex flex-col ">
+          <div className="flex justify-around my-2">
+            <button
+              onClick={() => {
+                randomAppointee();
+                // setTarget(target + 1);
+                setNextTarget(target);
+              }}
+            >
+              Next
+            </button>{" "}
+            <button
+              onClick={() => {
+                setTarget(target + 1);
+                setSelectedAppointee("");
+              }}
+            >
+              Skip
+            </button>
+            <button
+              onClick={() => {
+                setAppointeed(congPeople);
+                setSelectedAppointee("");
+                setTarget(0);
+              }}
+            >
+              Reset
+            </button>
+          </div>
+          <div className="flex justify-around mx-8 my-2">
+            <Link to={"define"}>Define</Link>
+            <Link to={"add-personel"}>Add New Personel</Link>
+          </div>
         </div>
 
         {/* <AddPersonel /> */}
 
-        <div className="main">
-          <div className="appointees-list">
+        <div className="flex w-full flex-col-reverse sm:flex-row">
+          <div className="w-full sm:w-2/3 bg-slate-400 rounded mx-2 my-4">
             <div className="filter">
               <select
                 value={filValue}
@@ -120,10 +133,13 @@ function HomePage() {
                 <option value="MS">Ministerial Servants</option>
               </select>
             </div>
-            <Appointees appointeed={appointeed} />
+            <Appointees
+              appointeed={appointeed}
+              removeAppointee={removeAppointee}
+            />
           </div>
 
-          <div className="assignments">
+          <div className="w-full bg-blue-300 rounded-sm sm:w-1/3">
             <Assignments
               target={target}
               parts={parts}

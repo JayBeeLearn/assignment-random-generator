@@ -7,7 +7,8 @@
   /* line-height: 1.5; */
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
+  /* color-scheme: ; */
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -41,7 +42,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.1em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -57,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -68,7 +69,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 .container{
   width: 98vw;
@@ -85,7 +86,7 @@ button:focus-visible {
 
 .appointees-list{
   /* height: 55vh; */
-  width: 60%;
+  /* width: 60%; */
   /* border: 1px solid gray; */
   border-radius: 8px;
   margin: 1rem auto;
@@ -102,7 +103,7 @@ button:focus-visible {
 
 .assignments{
   /* min-height: 50vh; */
-  width: 35%;
+  /* width: 35%; */
   /* border: 1px solid gray; */
   border-radius: 8px;
   background-color: #adb1ff;
